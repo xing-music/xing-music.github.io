@@ -65,6 +65,7 @@ h2 {
     text-align: center;
     color: white;
     height: 100px;
+    animation: fadein 2.0s ease-in;
 }
 
 a {
