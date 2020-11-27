@@ -22,7 +22,7 @@ function f() {
   }
 }
 
-// f();
+f();
 
 function getRandomWord(len) {
   const res = [];
