@@ -26,8 +26,7 @@ const videoData = [
 ];
 
 export default function Videos() {
-  return <div>
-      <section className="body" id="video">
+  return <section className="body" id="video">
         <H2 title='Videos' />
         {videoData.map(x => <Video videoSrcURL={x.url} videoTitle={x.title} key={x.title} />)}
         {/* <iframe
@@ -40,6 +39,5 @@ export default function Videos() {
           allow="encrypted-media"
           style={{height: '180px'}}
         ></iframe> */}
-      </section>
-  </div>;
+      </section>;
 }

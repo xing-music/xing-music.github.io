@@ -17,9 +17,10 @@ export default function Navbar() {
     // const to = '#' + window.location.href.split('#')[1];
 
     const gatsbyLinks = newLinks.map(x =>
-        <AnchorLink to={x.to} key={x.text}>
-            {x.text}
-        </AnchorLink>
+        <a href={x.to}>{x.text}</a>
+        // <AnchorLink to={x.to} key={x.text}>
+        //     {x.text}
+        // </AnchorLink>
     );
 
     return <>

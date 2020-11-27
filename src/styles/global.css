@@ -105,7 +105,7 @@ html {
     font-family: 'Quattrocento Sans', sans-serif;
     font-size: 18px;
     line-height: 145%;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 body, p {
@@ -276,12 +276,26 @@ iframe {
 }
 
 
-.releases {
-    padding: 0 3em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2em;
-    justify-items: center;
+@supports (display: grid) {
+    .releases {
+        padding: 0 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2em;
+        justify-items: center;
+    }
+}
+
+@supports not (display: grid) {
+    .releases {
+        display: flex;
+    }
+
+    .release-container {
+        flex-basis: 100%;
+        padding: 1em;
+    }
+
 }
 
 .release {

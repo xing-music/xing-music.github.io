@@ -16,8 +16,7 @@ export default function Releases() {
     }`
   );
 
-  return <div>
-    <section className="body" id="releases">
+  return <section className="body" id="releases">
       <H2 title='Releases' />
         {/* <Img fixed={data.file.childImageSharp.fixed}/> */}
         <div className='releases'>
@@ -34,5 +33,5 @@ export default function Releases() {
           </div>
         </div>
     </section>
-  </div>;
+  ;
 }
