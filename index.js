@@ -12,10 +12,6 @@ if (typeof window !== 'undefined') {
     window.addEventListener('scroll', scrollFunction);
 }
 
-function mobileButtonClick() {
-    document.getElementById('mobile-navbar').classList.toggle('hidden');
-    var links = document.getElementsByClassName("m");
-    for (var i = 0; i < links.length; i++) {
-        links[i].classList.toggle('hidden');
-    }
+function mobileClick() {
+    document.getElementById('navbar').classList.toggle('hidden');
 }

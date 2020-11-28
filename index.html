@@ -12,116 +12,130 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <button class="mobile-navbar-menu-button" aria-label="Menu" onclick="mobileButtonClick()">
+    <button id="mobile-navbar-menu-button" aria-label="Menu" onclick="mobileClick()">
         <svg height="20" width="20">
             <rect x="0" y="3" width="20" height="3"></rect>
             <rect x="0" y="8.666666666666668" width="20" height="3"></rect>
             <rect x="0" y="14.333333333333334" width="20" height="3"></rect>
         </svg>
     </button>
-    <nav class="mobile-navbar hidden" id="mobile-navbar">
-        <div class="m hidden"><a href="#bio">Bio</a></div>
-        <div class="m hidden"><a href="#video">Videos</a></div>
-        <div class="m hidden"><a href="#releases">Releases</a></div>
-        <div class="m hidden"><a href="#presskit">Presskit</a></div>
-        <div class="m hidden"><a href="#contact">Contact</a></div>
-    </nav>
-    <nav class="navbar" id="navbar">
-        <a href="#bio">Bio</a>
-        <a href="#video">Videos</a>
-        <a href="#releases">Releases</a>
-        <a href="#presskit">Presskit</a><a href="#contact">Contact</a>
+    <nav class="hidden" id="navbar">
+        <a href="#bio" onclick="mobileClick()">Bio</a>
+        <a href="#video" onclick="mobileClick()">Videos</a>
+        <a href="#releases" onclick="mobileClick()">Releases</a>
+        <a href="#presskit" onclick="mobileClick()">Presskit</a>
+        <a href="#contact" onclick="mobileClick()">Contact</a>
     </nav>
     <main>
-        <div class="main" id="main">
-            <section class="body" id="bio">
-                <div class="header-container">
-                    <div id="header-image-container">
+        <section id="bio">
+            <div class="header-container">
+                <div id="header-image-container">
+                    <picture>
+                        <source srcset="DSC01293_2.webp" type="image/webp">
+                        <source srcset="DSC01293_2.jpg" type="image/jpeg">
+                        <img src="DSC01293_2.jpg" alt="picture of XING" id="header-image">
+                    </picture>
+                </div>
+                <div class="title-container">
+                    <div class="title-decoration left"></div>
+                    <h1 class="title">Xing</h1>
+                    <div class="title-decoration right"></div>
+                </div>
+            </div>
+
+            <div class="separator-character primary-color">•</div>
+            <p>
+                XING is an Austrian Singer-Songwriter with Chinese roots. Growing up in a Chinese household, as an adolescent she found it difficult to find representation. Her music explores themes such as 'culture clash', racism, body shaming and self-acceptance. She approaches these topics with searing honesty and authenticity, defining her own path in music and life. Her art is influenced and inspired by genres like Soul, R'n'B and Hip-Hop.
+            </p>
+        </section>
+
+        <section id="video">
+            <div class="h2-container">
+                <h2>Videos</h2>
+                <div class="heading-line"> </div>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/fvwCiQWibd8" title="Salty by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/pmkN6K6-0i4" title="Own The Gold by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/mcFZ5Zl4pp4" title="Dizzy by Lucid Kid" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/JRN_BVNB7-M" title="Restart by Lou Asril Live" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+            </div>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/jI9lINf_cYo" title="Berlin Pretty City by Lou Asril Live" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+            </div>
+        </section>
+
+        <section id="releases">
+            <div class="h2-container">
+                <h2>Releases</h2>
+                <div class="heading-line"></div>
+            </div>
+            <div class="releases">
+                <div>
+                    <a href="https://music.apple.com/at/album/own-the-gold-single/1510275353" target="_blank" rel="noreferrer">
+                        <img src="cover_own_the_gold.jpg" alt="XING - Own The Gold" class="release">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://music.apple.com/at/album/salty-single/1531619165" target="_blank" rel="noreferrer">
                         <picture>
-                            <source srcset="DSC01293_2.webp" type="image/webp">
-                            <source srcset="DSC01293_2.jpg" type="image/jpeg">
-                            <img src="DSC01293_2.jpg" alt="picture of XING" id="header-image">
+                            <source srcset="cover_salty.webp" type="image/webp">
+                            <source srcset="cover_salty.jpg" type="image/jpeg">
+                            <img src="cover_salty.jpg" alt="XING - Salty" class="release">
                         </picture>
-                    </div>
-                    <div class="title-container">
-                        <div class="title-decoration left"></div>
-                        <h1 class="title">Xing</h1>
-                        <div class="title-decoration right"></div>
-                    </div>
+                    </a>
                 </div>
+            </div>
+        </section>
 
-                <div class="separator-character primary-color">•</div>
-                <p>
-                    XING is an Austrian Singer-Songwriter with Chinese roots. Growing up in a Chinese household, as an adolescent she found it difficult to find representation. Her music explores themes such as 'culture clash', racism, body shaming and self-acceptance. She approaches these topics with searing honesty and authenticity, defining her own path in music and life. Her art is influenced and inspired by genres like Soul, R'n'B and Hip-Hop.
-                </p>
-            </section>
+        <!--
+        <section id="shows">
+            <div class="h2-container">
+                <h2>Shows</h2>
+                <div class="heading-line"> </div>
+            </div>
+            <table id="shows-table" class="shows-table">
+                <tbody>
+                    <tr>
+                        <td class="show-date">15 / 7</td>
+                        <td>ctmfrk sureg</td>
+                    </tr>
+                    <tr>
+                        <td class="show-date">11 / 10</td>
+                        <td>bsrn pestyvf</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        -->
 
-            <section class="body" id="video">
-                <div class="h2-container">
-                    <h2>Videos</h2>
-                    <div class="heading-line"> </div>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/fvwCiQWibd8" title="Salty by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/pmkN6K6-0i4" title="Own The Gold by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/mcFZ5Zl4pp4" title="Dizzy by Lucid Kid" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/JRN_BVNB7-M" title="Restart by Lou Asril Live" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/jI9lINf_cYo" title="Berlin Pretty City by Lou Asril Live" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-                </div>
-            </section>
+        <section id="presskit">
+            <div class="h2-container">
+                <h2>Presskit</h2>
+                <div class="heading-line"></div>
+            </div>
+            <p style="text-align: left;">
+                You can download XING's press photos from this &nbsp;<a href="https://www.dropbox.com/sh/wt02q7417d8pghc/AABF68-ci8raQrEUIYdD-OS2a?dl=0" target="_black" rel="norefferer">Dropbox directory</a>.
+            </p>
+        </section>
 
-            <section class="body" id="releases">
-                <div class="h2-container">
-                    <h2>Releases</h2>
-                    <div class="heading-line"></div>
-                </div>
-                <div class="releases">
-                    <div class="release-container">
-                        <a href="https://music.apple.com/at/album/own-the-gold-single/1510275353" target="_blank" rel="noreferrer">
-                            <img src="cover_own_the_gold.jpg" alt="XING - Own The Gold" class="release">
-                        </a>
-                    </div>
-                    <div class="release-container">
-                        <a href="https://music.apple.com/at/album/salty-single/1531619165" target="_blank" rel="noreferrer">
-                            <picture>
-                                <source srcset="cover_salty.webp" type="image/webp">
-                                <source srcset="cover_salty.jpg" type="image/jpeg">
-                                <img src="cover_salty.jpg" alt="XING - Salty" class="release">
-                            </picture>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="body" id="presskit">
-                <div class="h2-container">
-                    <h2>Presskit</h2>
-                    <div class="heading-line"></div>
-                </div>
-                <p style="text-align: left;">
-                    You can download XING's press photos from this &nbsp;<a href="https://www.dropbox.com/sh/wt02q7417d8pghc/AABF68-ci8raQrEUIYdD-OS2a?dl=0" target="_black" rel="norefferer">Dropbox directory</a>.
-                </p>
-            </section>
-
-            <section class="body" id="contact">
-                <div class="h2-container">
-                    <h2>Contact</h2>
-                    <div class="heading-line"></div>
-                </div>
-                <p style="text-align: left;">
-                    For booking or any other inquiries, please contact me at &nbsp;<a href="mailto:xing.limi@icloud.com">xing.limi@icloud.com</a>.
-                </p>
-            </section>
-        </div>
+        <section id="contact">
+            <div class="h2-container">
+                <h2>Contact</h2>
+                <div class="heading-line"></div>
+            </div>
+            <p style="text-align: left;">
+                For booking or any other inquiries, please contact me at &nbsp;<a href="mailto:xing.limi@icloud.com">xing.limi@icloud.com</a>.
+            </p>
+        </section>
     </main>
+
     <div class="social-media-link-section">
         <div>
             <svg width="33" height="33" class="social-media-icon" role="img" xmlns="http://www.w3.org/2000/svg">

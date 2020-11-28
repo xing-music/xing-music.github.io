@@ -1,7 +1,5 @@
 :root {
-    /* --primary-color: #1ca086; */
     --primary-color: rgb(201, 0, 60);
-    /* --primary-color: teal; */
     --background-color: #ffffff;
     --p-color: hsl(0, 0%, 15%);
 }
@@ -68,15 +66,6 @@ h2 {
     animation: fadein 2.0s ease-in;
 }
 
-a {
-    color: var(--primary-color);
-}
-
-a:visited {
-    color: var(--p-color);
-    text-decoration-color: var(--primary-color);
-}
-
 p {
     text-align: justify;
     color: var(--p-color);
@@ -117,8 +106,8 @@ strong {
     color: var(--primary-color);
 }
 
-.main {
-    padding: 4em 0em;
+main {
+    padding: 2em 0em;
     transition: padding 0.5s;
 }
 
@@ -146,100 +135,97 @@ strong {
     border: 1px solid var(--primary-color);
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    background-color: var(--background-color);
-    padding: 2em 0em 0em 0em;
-    width: 100%;
-    text-align: center;
-    top: 0;
-    z-index: 1000;
-    transition: 0.5s;
-}
-
-.mobile-navbar-menu-button {
-    position: fixed;
-    width: 100%;
-    z-index: 1001;
-    color: var(--primary-color);
-    border: 0;
-    border-radius: 0;
-    height: 50px;
-    background-color: var(--background-color);
-    fill: var(--primary-color);
-}
-
-.mobile-navbar {
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    background-color: var(--background-color);
-    z-index: 1000;
-    top: 50px;
-    transition: 0.5s;
-}
-
-.mobile-navbar.hidden {
-    top: -100%;
-}
-
-.navbar.smaller {
-    padding: 0em 0em 0em 0em;
-}
-
 .icon-circle {
     fill: var(--primary-color);
-}
-
-.navbar a {
-    padding: 1em;
-}
-
-.mobile-navbar > div {
-    margin-top: 1em;
-    margin-bottom: 1.5em;
-    /* opacity: 1; */
-    transition: 1s;
 }
 
 #video-section {
     margin-bottom: -4em;
 }
 
-.navbar a, .mobile-navbar a {
+a {
+    color: var(--primary-color) !important;
+}
+
+nav a {
     text-transform: uppercase;
-    color: var(--primary-color);
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.1s;
 }
 
-.navbar a:hover, .mobile-navbar a:hover {
+nav a:hover {
     border-bottom: 1px solid;
 }
 
-.navbar a.current, .mobile-navbar a.current {
-    font-weight: bold;
-    border-bottom: 0;
+nav {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    background-color: var(--background-color);
+    z-index: 1000;
 }
 
-.footer {
-    display: flex;
-    justify-content: center;
-    font-size: 75%;
+@media (max-width: 768px) {
+    main {
+        padding: 0;
+    }
+
+    #mobile-navbar-menu-button {
+        position: fixed;
+        width: 100%;
+        z-index: 1001;
+        color: var(--primary-color);
+        border: 0;
+        border-radius: 0;
+        height: 50px;
+        background-color: var(--background-color);
+        fill: var(--primary-color);
+    }
+
+    nav {
+        top: 50px;
+    }
+
+    nav.hidden {
+        top: -100%;
+    }
+
+    nav a {
+        padding: 1em 0;
+        display: inline-block;
+        width: 100%;
+    }
 }
 
-.body {
+@media (min-width: 769px) {
+    .mobile-navbar-menu-button {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 2em 0em 0em 0em;
+        top: 0;
+    }
+
+    nav.smaller {
+        padding: 0;
+    }
+
+    nav a {
+        padding: 1em;
+    }
+
+}
+
+section {
     margin: 0em auto;
     padding: 4em 2em 0em 2em;
     max-width: 600px;
     animation: fadein 0.25s ease-in;
-}
-
-.body.four-o-four {
-    text-align: center;
 }
 
 iframe {
@@ -255,32 +241,15 @@ iframe {
     animation: fadein 1s ease-out;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .main {
-        padding: 0;
-    }
-}
-
-@media (min-width: 769px) {
-    .mobile-navbar, .mobile-navbar-menu-button {
-        display: none;
-    }
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-
 @supports (display: grid) {
     .releases {
-        padding: 0 3em;
         display: grid;
+        padding: 0 3em;
         grid-template-columns: 1fr 1fr;
         column-gap: 2em;
         justify-items: center;
@@ -292,7 +261,7 @@ iframe {
         display: flex;
     }
 
-    .release-container {
+    .releases > div {
         flex-basis: 100%;
         padding: 1em;
     }
@@ -307,11 +276,6 @@ iframe {
 
 .release:hover {
     opacity: 0.66;
-}
-
-.release-container {
-    max-width: 640px;
-    max-height: 640px;
 }
 
 #header-image-container {
