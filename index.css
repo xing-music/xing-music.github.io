@@ -253,10 +253,12 @@ nav a:hover {
 @supports (display: grid) {
     .releases {
         display: grid;
-        padding: 0 3em;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 2em;
+        grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
+    }
+
+    .releases > div {
+        padding: 0.5em;
     }
 }
 
@@ -267,7 +269,7 @@ nav a:hover {
 
     .releases > div {
         flex-basis: 100%;
-        padding: 1em;
+        padding: 0.5em;
     }
 }
 
