@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Quattrocento Sans';
+    src: url('QuattrocentoSans/QuattrocentoSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Yeseva One';
+    src: url('YesevaOne/YesevaOne-Regular.ttf');
+}
+
 :root {
     --primary-color: rgb(201, 0, 60);
     --background-color: #ffffff;
