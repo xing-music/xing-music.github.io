@@ -292,3 +292,7 @@ nav a:hover {
 .release:hover {
     opacity: 0.66;
 }
+
+.spotify {
+    padding: 0 0.5em;
+}
