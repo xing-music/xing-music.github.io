@@ -54,39 +54,26 @@
                 <h2>Videos</h2>
                 <div></div>
             </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/DLrCcUY8EX0" title="Feeling Too Much by Xing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
+            <div id="youtube-consent">
+                <p>
+                    Videos on this page are provided by YouTube.
+                    If you accept, YouTube may receive technical information when the videos load.
+                    See our <a href="/privacy.html">Privacy Policy</a>.
+                </p>
+                <a id="youtube-accept" type="button" class="button">
+                    Accept and load videos
+                </a>
+                <br/>
+                <a id="youtube-reject" type="button" class="button">
+                    Reject
+                </a>
             </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/qxtL0ZtQ4-k" title="Get on your knees by Xing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/XyF8f0KjGUI" title="Stitches by Xing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/L0i9O9i7vrM" title="Stitches by Xing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/VGM8o7sHWtQ" title="Rain by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/5HbhrPXBmTE" title="Swallow You by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/GsItzYDRb9Q" title="Own The Gold (Live Session) by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/xkHJxA9Pe7A" title="Share My Love (Live Session) by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/vAbZpcx1Iq8" title="Was It? by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/fvwCiQWibd8" title="Salty by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/pmkN6K6-0i4" title="Own The Gold by Xing" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen=""></iframe>
-            </div>
+            <p style="text-align: right;">
+                <a id="youtube-settings" type="button" class="button">
+                    Privacy settings
+                </a>
+            </p>
+            <div id="videos" style="margin-top: 20px"></div>
         </section>
 
         <section id="releases">
@@ -95,9 +82,9 @@
                 <div></div>
             </div>
 
-            <div class="spotify">
+            <!-- <div class="spotify">
                 <iframe style="height: 200px" src="https://open.spotify.com/embed/artist/56YRiQwXTCOKkls3onowKd?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
+            </div> -->
 
             <div class="releases">
                 <div>
@@ -312,4 +299,90 @@
         </div>
     </div>
 </body>
+<script>
+    const youtubeVideos = [
+        ["DLrCcUY8EX0", "Feeling Too Much by Xing"],
+        ["qxtL0ZtQ4-k", "Get on your knees by Xing"],
+        ["XyF8f0KjGUI", "Stitches by Xing"],
+        ["L0i9O9i7vrM", "Stitches by Xing"],
+        ["VGM8o7sHWtQ", "Rain by Xing"],
+        ["5HbhrPXBmTE", "Swallow You by Xing"],
+        ["GsItzYDRb9Q", "Own The Gold (Live Session) by Xing"],
+        ["xkHJxA9Pe7A", "Share My Love (Live Session) by Xing"],
+        ["vAbZpcx1Iq8", "Was It? by Xing"],
+        ["fvwCiQWibd8", "Salty by Xing"],
+        ["pmkN6K6-0i4", "Own The Gold by Xing"]
+    ];
+
+    function loadYouTubeVideos() {
+        const container = document.getElementById("videos");
+
+        if (container.children.length) return;
+
+        youtubeVideos.forEach(([id, title]) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "video";
+
+            const iframe = document.createElement("iframe");
+            iframe.src =
+                "https://www.youtube-nocookie.com/embed/" + id;
+            iframe.title = title;
+            iframe.allow =
+                "accelerometer; encrypted-media; " +
+                "gyroscope; picture-in-picture; web-share";
+            iframe.allowFullscreen = true;
+            iframe.referrerPolicy =
+                "strict-origin-when-cross-origin";
+
+            wrapper.appendChild(iframe);
+            container.appendChild(wrapper);
+        });
+    }
+
+    function removeYouTubeVideos() {
+        document.getElementById("videos").replaceChildren();
+    }
+
+    function showYouTubeSettings() {
+        document.getElementById("youtube-consent").hidden = false;
+        document.getElementById("youtube-settings").hidden = true;
+    }
+
+    function saveYouTubeChoice(choice) {
+        localStorage.setItem("youtube-consent", choice);
+
+        if (choice === "accepted") {
+            loadYouTubeVideos();
+        } else {
+            removeYouTubeVideos();
+        }
+
+        document.getElementById("youtube-consent").hidden = true;
+        document.getElementById("youtube-settings").hidden = false;
+    }
+
+    document.getElementById("youtube-accept").addEventListener(
+        "click", () => saveYouTubeChoice("accepted")
+    );
+
+    document.getElementById("youtube-reject").addEventListener(
+        "click", () => saveYouTubeChoice("rejected")
+    );
+
+    document.getElementById("youtube-settings").addEventListener(
+        "click", showYouTubeSettings
+    );
+
+    // Restore a previously saved choice.
+    const savedChoice = localStorage.getItem("youtube-consent");
+
+    if (savedChoice === "accepted") {
+        loadYouTubeVideos();
+        document.getElementById("youtube-consent").hidden = true;
+    } else if (savedChoice === "rejected") {
+        document.getElementById("youtube-consent").hidden = true;
+    } else {
+        document.getElementById("youtube-settings").hidden = true;
+    }
+    </script>
 </html>
