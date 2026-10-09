@@ -8,14 +8,19 @@
     src: url('YesevaOne/YesevaOne-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Oswald';
+    src: url('Oswald/static/Oswald-Regular.ttf');
+}
+
 :root {
-    --primary-color: rgb(201, 0, 60);
+    --primary-color: rgb(251, 35, 7);
     --background-color: #ffffff;
     --p-color: hsl(0, 0%, 15%);
 }
 
 html {
-    font-family: 'Quattrocento Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 18px;
     line-height: 145%;
     scroll-behavior: smooth;
@@ -48,10 +53,16 @@ h1, h2, h3, h4, h5, h6 {
 p {
     text-align: justify;
     color: var(--p-color);
+    margin-bottom: 20px;
+}
+
+.promo {
+    text-align: center;
+    color: var(--primary-color);
 }
 
 a {
-    color: var(--primary-color) !important;
+    color: var(--p-color) !important;
 }
 
 iframe {
